@@ -2,7 +2,7 @@
   "name": "jobs-portal",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://donbossco1432.github.io/jobs-portal",
+  "homepage": "https://donbossco1432.github.io/jobsportal",
   "dependencies": {
     "cra-template-pwa": "2.0.0",
     "react": "^19.1.0",
