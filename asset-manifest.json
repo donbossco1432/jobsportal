@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/jobsportal/static/css/main.b83c32df.css",
-    "main.js": "/jobsportal/static/js/main.9f95481f.js",
-    "static/js/156.cecd3d48.chunk.js": "/jobsportal/static/js/156.cecd3d48.chunk.js",
-    "service-worker.js": "/jobsportal/service-worker.js",
-    "index.html": "/jobsportal/index.html",
-    "main.b83c32df.css.map": "/jobsportal/static/css/main.b83c32df.css.map",
-    "main.9f95481f.js.map": "/jobsportal/static/js/main.9f95481f.js.map",
-    "156.cecd3d48.chunk.js.map": "/jobsportal/static/js/156.cecd3d48.chunk.js.map"
+    "main.css": "/static/css/main.b83c32df.css",
+    "main.js": "/static/js/main.d92ae9dd.js",
+    "static/js/156.cecd3d48.chunk.js": "/static/js/156.cecd3d48.chunk.js",
+    "service-worker.js": "/service-worker.js",
+    "index.html": "/index.html",
+    "main.b83c32df.css.map": "/static/css/main.b83c32df.css.map",
+    "main.d92ae9dd.js.map": "/static/js/main.d92ae9dd.js.map",
+    "156.cecd3d48.chunk.js.map": "/static/js/156.cecd3d48.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b83c32df.css",
-    "static/js/main.9f95481f.js"
+    "static/js/main.d92ae9dd.js"
   ]
 }
