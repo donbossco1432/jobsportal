@@ -182,9 +182,171 @@ const jobsList = [
       'Get visa in just 40 working Days',
     ],
     b2b: 'Service charges -- ****CONTACT US****',
-    image: 'job-russia.jpg',
+    image: '/job-russia.jpg',
   },
-  // Add more jobs here in the future
+  {
+    id: 'poland-tile-fixer',
+    title: 'General Worker cum Tile Fixer',
+    country: 'Poland',
+    emoji: '🇵🇱',
+    details: [
+      '20 Vacancies Available',
+      'Salary: 25-35 Zloty/hour (₹510-₹715/hour)',
+      '2-Year Work Permit',
+      'Accommodation & Transportation Provided',
+    ],
+    eligibility: [
+      'Basic tiling experience required',
+      'Selection based on CV',
+      'Valid Passport',
+      'Work Experience Certificate',
+      'Medical Reports',
+    ],
+    benefits: [
+      'Long-term work opportunities',
+      'Competitive salary',
+      'Company provided accommodation',
+    ],
+    b2b: 'Service charges -- ****CONTACT US****',
+    image: '/image2.jpg',
+  },
+  {
+    id: 'poland-welding',
+    title: 'Welding & Fabrication Roles',
+    country: 'Poland',
+    emoji: '🇵🇱',
+    details: [
+      'Multiple Positions Available:',
+      'MIG/MAG Welder: 30-34 Zloty/hour (₹610-₹690)',
+      'TIG/ARC Welder: 32-36 Zloty/hour (₹655-₹740)',
+      'Pipe Fitter & Fabricator: 30-35 Zloty/hour (₹610-₹715)',
+      'Structural Fitter & Fabricator: 30-35 Zloty/hour (₹610-₹715)',
+    ],
+    eligibility: [
+      'Minimum 5 years experience',
+      'Testing videos & qualification certificates mandatory',
+      'Isometric drawing knowledge (for Fabricators)',
+      'Valid Passport',
+      'Work Experience Certificate',
+    ],
+    benefits: [
+      '8-10 hrs/day + OT',
+      '5 days work week + OT',
+      'Company provided accommodation & transport',
+    ],
+    b2b: 'Service charges -- ****CONTACT US****',
+    image: '/image3.jpg',
+  },
+  {
+    id: 'poland-scaffolder',
+    title: 'Scaffolder',
+    country: 'Poland',
+    emoji: '🇵🇱',
+    details: [
+      '10 Vacancies Available',
+      'Salary: 25-30 Zloty/hour (₹510-₹610/hour)',
+      'Accommodation & Transportation Provided',
+    ],
+    eligibility: [
+      '5-8 years experience mandatory',
+      'Scaffolding certificate required',
+      'Work video submission required',
+      'Valid Passport',
+      'Medical Reports',
+    ],
+    benefits: [
+      'International exposure',
+      'Company provided accommodation',
+      'Long-term opportunities',
+    ],
+    b2b: 'Service charges -- ****CONTACT US****',
+    image: '/image4.jpg',
+  },
+  {
+    id: 'poland-sandblaster',
+    title: 'Sand Blaster / Spray Painter',
+    country: 'Poland',
+    emoji: '🇵🇱',
+    details: [
+      'Salary: 30-35 Zloty/hour (₹610-₹715/hour)',
+      'Accommodation & Transport Provided',
+      'Processing Time: Up to 6 months',
+    ],
+    eligibility: [
+      'Shipyard experience required',
+      'Valid Passport',
+      'Work Experience Certificate',
+      'Medical Reports',
+    ],
+    benefits: [
+      'Telephonic interview',
+      'CV Selection ongoing',
+      'Skilled trade job in Europe',
+    ],
+    b2b: 'Service charges -- ****CONTACT US****',
+    image: '/image5.jpg',
+  },
+  {
+    id: 'croatia-beer-packaging',
+    title: 'Beer Packaging & Bottling Operator',
+    country: 'Croatia',
+    emoji: '🇭🇷',
+    details: [
+      'Salary: €1300-€1400/month (₹1,17,000-₹1,26,000/month)',
+      'Work Hours: 08:00 am – 04:00 pm',
+      '5 days/week + OT',
+      '8 hours/day + OT',
+    ],
+    eligibility: [
+      'Age: Up to 55 years',
+      'Warehouse or production field experience',
+      'Valid Passport',
+      'Medical Reports',
+    ],
+    benefits: [
+      'Accommodation Provided',
+      'Overtime available',
+      'Suitable for couples',
+    ],
+    b2b: 'Service charges -- ****CONTACT US****',
+    image: '/image6.jpg',
+  },
+  {
+    id: 'germany-skilled-roles',
+    title: 'Skilled & General Roles',
+    country: 'Germany',
+    emoji: '🇩🇪',
+    details: [
+      '50+ Vacancies Available',
+      'Salary: €2400-€2900/month (₹2,15,000-₹2,60,000/month)',
+      'Multiple Positions:',
+      '- Gastronomy Worker',
+      '- Logistic & Warehouse Worker',
+      '- Construction Helper',
+      '- General Worker',
+      '- Skilled TPO Roofing Welders',
+      '- Skilled False Ceiling Workers',
+      '- Piping Engineer',
+      '- Taxi Drivers',
+      '- Welders',
+      '- Gypsum Plaster Workers',
+    ],
+    eligibility: [
+      'Degree/Diploma preferred',
+      'Age below 40 preferred',
+      'Freshers can apply',
+      'Valid Passport',
+      'Medical Reports',
+    ],
+    benefits: [
+      'TRC/PR eligible',
+      'Family reunion possible',
+      'Quick processing',
+      'Long-term opportunities',
+    ],
+    b2b: 'Service charges -- ****CONTACT US****',
+    image: '/image7.jpg',
+  },
 ];
 
 function Jobs({ onConnectClick }) {
@@ -194,7 +356,15 @@ function Jobs({ onConnectClick }) {
       {jobsList.map(job => (
         <div key={job.id} className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8 flex flex-col md:flex-row gap-10 items-center max-w-4xl w-full border border-blue-100 hover:shadow-indigo-200 transition-all duration-300 animate-slide-up mb-10">
           <div className="w-full md:w-1/3 flex justify-center">
-            <img src={job.image} alt={job.title} className="rounded-2xl w-full max-w-lg border-4 border-indigo-100 shadow-lg hover:shadow-indigo-300 transition duration-300" />
+            <img 
+              src={process.env.PUBLIC_URL + job.image} 
+              alt={job.title} 
+              className="rounded-2xl w-full max-w-lg border-4 border-indigo-100 shadow-lg hover:shadow-indigo-300 transition duration-300"
+              onError={(e) => {
+                console.error(`Failed to load image: ${job.image}`);
+                e.target.src = process.env.PUBLIC_URL + '/placeholder.jpg';
+              }}
+            />
           </div>
           <div className="w-full md:w-2/3">
             <h3 className="text-3xl font-extrabold mb-3 text-indigo-700 flex items-center gap-2"><FaBriefcase className="text-indigo-500" /> {job.title}</h3>
@@ -212,7 +382,7 @@ function Jobs({ onConnectClick }) {
             <div className="mb-2 font-semibold text-indigo-600">Best Deal For B2B</div>
             <div className="mb-4 text-gray-700">{job.b2b}</div>
             <button onClick={() => onConnectClick(`${job.emoji} ${job.title} - ${job.country}`)} className="flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:bg-green-700 transition text-lg">
-              <FaWhatsapp className="text-2xl" /> Connect Us
+              <FaWhatsapp className="text-2xl" /> Contact Us
             </button>
           </div>
         </div>
