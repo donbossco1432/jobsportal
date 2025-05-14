@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
-import logo from './logo.svg';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import { FaWhatsapp, FaBriefcase } from 'react-icons/fa';
 
