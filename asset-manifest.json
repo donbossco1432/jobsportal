@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/jobs-portal/static/css/main.ab56bce7.css",
+    "main.js": "/jobs-portal/static/js/main.fff831f7.js",
+    "static/js/156.cecd3d48.chunk.js": "/jobs-portal/static/js/156.cecd3d48.chunk.js",
+    "service-worker.js": "/jobs-portal/service-worker.js",
+    "static/media/logo.svg": "/jobs-portal/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/jobs-portal/index.html",
+    "main.ab56bce7.css.map": "/jobs-portal/static/css/main.ab56bce7.css.map",
+    "main.fff831f7.js.map": "/jobs-portal/static/js/main.fff831f7.js.map",
+    "156.cecd3d48.chunk.js.map": "/jobs-portal/static/js/156.cecd3d48.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab56bce7.css",
+    "static/js/main.fff831f7.js"
+  ]
+}
