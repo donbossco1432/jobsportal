@@ -51,7 +51,7 @@ function Navbar({ onContactClick }) {
     <nav className="sticky top-0 z-40 bg-white/90 backdrop-bl border-b border-indigo-100 shadow-sm">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center gap-2 text-xl md:text-2xl font-extrabold text-indigo-700 tracking-tight">
-          <FaBriefcase className="text-indigo-500" /> JobsPortal
+          <FaBriefcase className="text-indigo-500" /> AbroadJobsFinder
         </div>
         {/* Hamburger for mobile */}
         <button className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" onClick={() => setMenuOpen(!menuOpen)}>
@@ -143,7 +143,7 @@ function Home({ onContactClick }) {
           </filter>
         </defs>
       </svg>
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-indigo-800 mb-6 md:mb-8 drop-shadow animate-slide-down text-center">Welcome to <span className="bg-gradient-to-r from-indigo-500 to-blue-400 text-transparent bg-clip-text">JobsPortal</span></h1>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-indigo-800 mb-6 md:mb-8 drop-shadow animate-slide-down text-center">Welcome to <span className="bg-gradient-to-r from-indigo-500 to-blue-400 text-transparent bg-clip-text">AbroadJobsFinder</span></h1>
       <div className="flex flex-col gap-4 w-full max-w-xs sm:max-w-md md:max-w-none md:flex-row md:gap-8 items-center justify-center">
         <Link to="/jobs" className="flex items-center gap-3 w-full md:w-auto justify-center px-6 py-4 md:px-14 md:py-6 text-lg md:text-2xl font-bold rounded-xl bg-gradient-to-r from-indigo-500 to-blue-500 text-white shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
           <FaBriefcase className="text-2xl md:text-3xl" /> Abroad Jobs
@@ -395,7 +395,7 @@ function About() {
     <div className="container mx-auto px-4 py-12 animate-fade-in">
       <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl p-8 max-w-3xl mx-auto border border-indigo-100">
         <h2 className="text-3xl font-bold text-indigo-700 mb-6">About Us</h2>
-        <p className="text-lg text-gray-700">JobsPortal is dedicated to connecting job seekers with the best opportunities abroad. We provide transparent, reliable, and fast services to help you achieve your career dreams. Our mission is to make overseas employment accessible and hassle-free for everyone.</p>
+        <p className="text-lg text-gray-700">AbroadJobsFinder is dedicated to connecting job seekers with the best opportunities abroad. We provide transparent, reliable, and fast services to help you achieve your career dreams. Our mission is to make overseas employment accessible and hassle-free for everyone.</p>
       </div>
     </div>
   );
