@@ -181,7 +181,7 @@ const jobsList = [
       'Pay fees After visa',
       'Get visa in just 40 working Days',
     ],
-    b2b: 'Service charges -- 3.3 lakhs',
+    b2b: 'Service charges -- ****CONTACT US****',
     image: 'job-russia.jpg',
   },
   // Add more jobs here in the future
