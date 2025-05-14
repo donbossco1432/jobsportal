@@ -141,7 +141,7 @@ const jobsList = [
       'Get visa in just 40 working Days',
     ],
     b2b: 'Service charges -- 3.3 lakhs',
-    image: '/job-russia.jpg',
+    image: 'job-russia.jpg',
   },
   // Add more jobs here in the future
 ];
