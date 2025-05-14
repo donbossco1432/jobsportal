@@ -357,12 +357,12 @@ function Jobs({ onConnectClick }) {
         <div key={job.id} className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8 flex flex-col md:flex-row gap-10 items-center max-w-4xl w-full border border-blue-100 hover:shadow-indigo-200 transition-all duration-300 animate-slide-up mb-10">
           <div className="w-full md:w-1/3 flex justify-center">
             <img 
-              src={process.env.PUBLIC_URL + job.image} 
+              src={job.image} 
               alt={job.title} 
               className="rounded-2xl w-full max-w-lg border-4 border-indigo-100 shadow-lg hover:shadow-indigo-300 transition duration-300"
               onError={(e) => {
                 console.error(`Failed to load image: ${job.image}`);
-                e.target.src = process.env.PUBLIC_URL + '/placeholder.jpg';
+                e.target.src = './placeholder.jpg';
               }}
             />
           </div>
