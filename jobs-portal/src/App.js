@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import { FaWhatsapp, FaBriefcase } from 'react-icons/fa';
 
 function WhatsAppModal({ show, onClose, onSubmit, context, error, setUserNumber, userNumber }) {
+  const inputRef = useRef(null);
+  useEffect(() => {
+    if (show && inputRef.current) {
+      inputRef.current.focus();
+      inputRef.current.select();
+    }
+  }, [show]);
   return show ? (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm animate-fade-in">
       <div className="bg-white/90 rounded-3xl shadow-2xl p-8 w-full max-w-md transform scale-100 animate-modal-pop relative border border-indigo-100">
@@ -13,6 +20,7 @@ function WhatsAppModal({ show, onClose, onSubmit, context, error, setUserNumber,
         <div className="text-center text-gray-500 mb-4 text-base">{context}</div>
         <form onSubmit={onSubmit} className="flex flex-col gap-4">
           <input
+            ref={inputRef}
             type="tel"
             placeholder="e.g. +919999999999"
             value={userNumber}
@@ -32,6 +40,7 @@ function WhatsAppModal({ show, onClose, onSubmit, context, error, setUserNumber,
 }
 
 function Navbar({ onContactClick }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/jobs', label: 'Jobs' },
@@ -40,12 +49,19 @@ function Navbar({ onContactClick }) {
   ];
   const location = window.location.pathname;
   return (
-    <nav className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-indigo-100 shadow-sm">
+    <nav className="sticky top-0 z-40 bg-white/90 backdrop-bl border-b border-indigo-100 shadow-sm">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="flex items-center gap-2 text-2xl font-extrabold text-indigo-700 tracking-tight">
+        <div className="flex items-center gap-2 text-xl md:text-2xl font-extrabold text-indigo-700 tracking-tight">
           <FaBriefcase className="text-indigo-500" /> JobsPortal
         </div>
-        <div className="flex gap-2 bg-indigo-50 rounded-full px-2 py-1 shadow-inner border border-indigo-100">
+        {/* Hamburger for mobile */}
+        <button className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" onClick={() => setMenuOpen(!menuOpen)}>
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        {/* Desktop nav */}
+        <div className="hidden md:flex gap-2 bg-indigo-50 rounded-full px-2 py-1 shadow-inner border border-indigo-100">
           {navLinks.map(link => link.isContact ? (
             <button
               key={link.to}
@@ -67,15 +83,40 @@ function Navbar({ onContactClick }) {
           ))}
         </div>
       </div>
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white/95 border-t border-indigo-100 shadow-lg px-4 py-2 flex flex-col gap-2 animate-fade-in">
+          {navLinks.map(link => link.isContact ? (
+            <button
+              key={link.to}
+              onClick={() => { setMenuOpen(false); onContactClick('General Inquiry'); }}
+              className={`w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-200 text-base focus:outline-none focus:ring-2 focus:ring-indigo-300 
+                ${location === link.to ? 'bg-indigo-600 text-white shadow-md' : 'text-indigo-700 hover:bg-indigo-100 hover:text-indigo-900'}`}
+            >
+              {link.label}
+            </button>
+          ) : (
+            <Link
+              key={link.to}
+              to={link.to}
+              onClick={() => setMenuOpen(false)}
+              className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 text-base focus:outline-none focus:ring-2 focus:ring-indigo-300 
+                ${location === link.to ? 'bg-indigo-600 text-white shadow-md' : 'text-indigo-700 hover:bg-indigo-100 hover:text-indigo-900'}`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
 
 function Home({ onContactClick }) {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-[70vh] overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center min-h-[70vh] overflow-hidden px-2 sm:px-4">
       {/* Abstract SVG background blob */}
-      <svg className="absolute -top-32 -left-32 w-[600px] h-[600px] opacity-30 blur-2xl -z-10" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className="absolute -top-32 -left-32 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] opacity-30 blur-2xl -z-10" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_f_1_2)">
           <ellipse cx="300" cy="300" rx="300" ry="200" fill="url(#paint0_radial_1_2)" />
         </g>
@@ -89,7 +130,7 @@ function Home({ onContactClick }) {
           </filter>
         </defs>
       </svg>
-      <svg className="absolute bottom-0 right-0 w-[400px] h-[400px] opacity-20 blur-2xl -z-10" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className="absolute bottom-0 right-0 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] opacity-20 blur-2xl -z-10" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter1_f_1_3)">
           <ellipse cx="200" cy="200" rx="200" ry="120" fill="url(#paint1_radial_1_3)" />
         </g>
@@ -103,13 +144,13 @@ function Home({ onContactClick }) {
           </filter>
         </defs>
       </svg>
-      <h1 className="text-5xl md:text-6xl font-extrabold text-indigo-800 mb-8 drop-shadow animate-slide-down">Welcome to <span className="bg-gradient-to-r from-indigo-500 to-blue-400 text-transparent bg-clip-text">JobsPortal</span></h1>
-      <div className="flex flex-col md:flex-row gap-8">
-        <Link to="/jobs" className="flex items-center gap-3 px-14 py-6 text-2xl font-bold rounded-xl bg-gradient-to-r from-indigo-500 to-blue-500 text-white shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-          <FaBriefcase className="text-3xl" /> Abroad Jobs
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-indigo-800 mb-6 md:mb-8 drop-shadow animate-slide-down text-center">Welcome to <span className="bg-gradient-to-r from-indigo-500 to-blue-400 text-transparent bg-clip-text">JobsPortal</span></h1>
+      <div className="flex flex-col gap-4 w-full max-w-xs sm:max-w-md md:max-w-none md:flex-row md:gap-8 items-center justify-center">
+        <Link to="/jobs" className="flex items-center gap-3 w-full md:w-auto justify-center px-6 py-4 md:px-14 md:py-6 text-lg md:text-2xl font-bold rounded-xl bg-gradient-to-r from-indigo-500 to-blue-500 text-white shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+          <FaBriefcase className="text-2xl md:text-3xl" /> Abroad Jobs
         </Link>
-        <button onClick={() => onContactClick('General Inquiry')} className="flex items-center gap-3 px-14 py-6 text-2xl font-bold rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-          <FaWhatsapp className="text-3xl" /> Contact Us
+        <button onClick={() => onContactClick('General Inquiry')} className="flex items-center gap-3 w-full md:w-auto justify-center px-6 py-4 md:px-14 md:py-6 text-lg md:text-2xl font-bold rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+          <FaWhatsapp className="text-2xl md:text-3xl" /> Contact Us
         </button>
       </div>
     </div>
