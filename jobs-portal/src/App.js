@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import { FaWhatsapp, FaBriefcase } from 'react-icons/fa';
