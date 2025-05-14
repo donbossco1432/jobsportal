@@ -182,7 +182,7 @@ const jobsList = [
       'Get visa in just 40 working Days',
     ],
     b2b: 'Service charges -- ****CONTACT US****',
-    image: '/job-russia.jpg',
+    image: './job-russia.jpg',
   },
   {
     id: 'poland-tile-fixer',
@@ -208,7 +208,7 @@ const jobsList = [
       'Company provided accommodation',
     ],
     b2b: 'Service charges -- ****CONTACT US****',
-    image: '/image2.jpg',
+    image: './image2.jpg',
   },
   {
     id: 'poland-welding',
@@ -235,7 +235,7 @@ const jobsList = [
       'Company provided accommodation & transport',
     ],
     b2b: 'Service charges -- ****CONTACT US****',
-    image: '/image3.jpg',
+    image: './image3.jpg',
   },
   {
     id: 'poland-scaffolder',
@@ -260,7 +260,7 @@ const jobsList = [
       'Long-term opportunities',
     ],
     b2b: 'Service charges -- ****CONTACT US****',
-    image: '/image4.jpg',
+    image: './image4.jpg',
   },
   {
     id: 'poland-sandblaster',
@@ -284,7 +284,7 @@ const jobsList = [
       'Skilled trade job in Europe',
     ],
     b2b: 'Service charges -- ****CONTACT US****',
-    image: '/image5.jpg',
+    image: './image5.jpg',
   },
   {
     id: 'croatia-beer-packaging',
@@ -309,7 +309,7 @@ const jobsList = [
       'Suitable for couples',
     ],
     b2b: 'Service charges -- ****CONTACT US****',
-    image: '/image6.jpg',
+    image: './image6.jpg',
   },
   {
     id: 'germany-skilled-roles',
@@ -345,7 +345,7 @@ const jobsList = [
       'Long-term opportunities',
     ],
     b2b: 'Service charges -- ****CONTACT US****',
-    image: '/image7.jpg',
+    image: './image7.jpg',
   },
 ];
 
